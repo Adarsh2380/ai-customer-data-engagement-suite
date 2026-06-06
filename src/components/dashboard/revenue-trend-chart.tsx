@@ -41,10 +41,14 @@ export function RevenueTrendChart({ data }: RevenueTrendChartProps) {
               tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`}
             />
             <Tooltip
-              formatter={(value: number, name: string) => [
-                name === "revenue" ? formatCurrency(value) : value,
-                name === "revenue" ? "Revenue" : "Customers",
-              ]}
+              formatter={(value, name) => {
+                const num = typeof value === "number" ? value : Number(value);
+                const key = String(name);
+                return [
+                  key === "revenue" ? formatCurrency(num) : num,
+                  key === "revenue" ? "Revenue" : "Customers",
+                ];
+              }}
               contentStyle={{
                 borderRadius: "8px",
                 border: "1px solid hsl(var(--border))",

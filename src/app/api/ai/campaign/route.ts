@@ -21,13 +21,18 @@ export async function POST(request: Request) {
       targetSegment
     );
 
-    let parsed;
+    let parsed: {
+      subject?: string;
+      headline?: string;
+      body?: string;
+      callToAction?: string;
+    };
     try {
       const cleaned = rawResponse
-        .replace(/```json\n?/g, "")
+        .replace(/```json\n?/gi, "")
         .replace(/```\n?/g, "")
         .trim();
-      parsed = JSON.parse(cleaned);
+      parsed = JSON.parse(cleaned) as typeof parsed;
     } catch {
       return NextResponse.json(
         { error: "Failed to parse AI response" },

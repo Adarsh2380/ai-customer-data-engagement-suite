@@ -46,7 +46,7 @@ export function SegmentPieChart({
               paddingAngle={4}
               dataKey="value"
               label={({ name, percent }) =>
-                `${name}: ${(percent * 100).toFixed(0)}%`
+                `${name}: ${((percent ?? 0) * 100).toFixed(0)}%`
               }
               labelLine={false}
             >
@@ -58,9 +58,9 @@ export function SegmentPieChart({
               ))}
             </Pie>
             <Tooltip
-              formatter={(value: number, _name: string, props) => [
-                `${value} customers (${formatCurrency(props.payload.revenue)})`,
-                props.payload.name,
+              formatter={(value: number, _name: string, item) => [
+                `${value} customers (${formatCurrency(item.payload.revenue as number)})`,
+                item.payload.name as string,
               ]}
               contentStyle={{
                 borderRadius: "8px",
