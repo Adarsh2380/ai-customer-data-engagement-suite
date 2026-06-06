@@ -2,10 +2,10 @@
 
 A production-ready enterprise SaaS application for retail customer analytics, AI-driven business insights, segmentation, churn prediction, and marketing automation. Built to demonstrate Forward Deployed Engineer capabilities at an AI-native B2B SaaS company.
 
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8)
-![Gemini AI](https://img.shields.io/badge/Gemini-AI-4285f4)
+Next.js
+TypeScript
+Tailwind CSS
+Gemini AI
 
 ## Features
 
@@ -20,16 +20,18 @@ A production-ready enterprise SaaS application for retail customer analytics, AI
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 15 (App Router) |
-| Language | TypeScript |
-| Styling | Tailwind CSS + Shadcn UI |
-| AI | Google Gemini API |
-| Charts | Recharts |
-| CSV Parsing | PapaParse |
-| Icons | Lucide React |
-| Deployment | Vercel |
+
+| Layer       | Technology               |
+| ----------- | ------------------------ |
+| Framework   | Next.js 15 (App Router)  |
+| Language    | TypeScript               |
+| Styling     | Tailwind CSS + Shadcn UI |
+| AI          | Google Gemini API        |
+| Charts      | Recharts                 |
+| CSV Parsing | PapaParse                |
+| Icons       | Lucide React             |
+| Deployment  | Vercel                   |
+
 
 ## Quick Start
 
@@ -49,9 +51,11 @@ Open [http://localhost:3000](http://localhost:3000) — the app loads with 120 s
 
 ## Environment Variables
 
-| Variable | Description |
-|----------|-------------|
+
+| Variable         | Description                           |
+| ---------------- | ------------------------------------- |
 | `GEMINI_API_KEY` | Google Gemini API key for AI features |
+
 
 ## Project Structure
 
@@ -85,15 +89,17 @@ src/
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/customers` | List all customers (paginated) |
-| GET | `/api/metrics` | Dashboard metrics & analytics |
-| GET | `/api/customers/segment?segment=High Value` | Filter by segment |
-| GET | `/api/customers/churn?risk=High Risk` | Filter by churn risk |
-| POST | `/api/webhook` | Receive webhook events |
-| POST | `/api/ai/chat` | AI analyst (streaming) |
-| POST | `/api/ai/campaign` | Generate marketing campaigns |
+
+| Method | Endpoint                                    | Description                    |
+| ------ | ------------------------------------------- | ------------------------------ |
+| GET    | `/api/customers`                            | List all customers (paginated) |
+| GET    | `/api/metrics`                              | Dashboard metrics & analytics  |
+| GET    | `/api/customers/segment?segment=High Value` | Filter by segment              |
+| GET    | `/api/customers/churn?risk=High Risk`       | Filter by churn risk           |
+| POST   | `/api/webhook`                              | Receive webhook events         |
+| POST   | `/api/ai/chat`                              | AI analyst (streaming)         |
+| POST   | `/api/ai/campaign`                          | Generate marketing campaigns   |
+
 
 ## CSV Format
 
@@ -106,26 +112,23 @@ CUST-0001,John Smith,john@email.com,12,8500,2025-03-15
 
 ## Segmentation Rules
 
-| Segment | Criteria |
-|---------|----------|
-| High Value | Revenue > $10,000 |
+
+| Segment      | Criteria                 |
+| ------------ | ------------------------ |
+| High Value   | Revenue > $10,000        |
 | Medium Value | Revenue $5,000 – $10,000 |
-| Low Value | Revenue < $5,000 |
+| Low Value    | Revenue < $5,000         |
+
 
 ## Churn Prediction
 
-| Risk Level | Criteria |
-|------------|----------|
-| High Risk | Last purchase > 90 days ago |
+
+| Risk Level  | Criteria                    |
+| ----------- | --------------------------- |
+| High Risk   | Last purchase > 90 days ago |
 | Medium Risk | Last purchase > 60 days ago |
-| Low Risk | Last purchase ≤ 60 days ago |
+| Low Risk    | Last purchase ≤ 60 days ago |
 
-## Deployment (Vercel)
-
-1. Push to GitHub
-2. Import project in [Vercel](https://vercel.com)
-3. Add `GEMINI_API_KEY` environment variable
-4. Deploy
 
 ```bash
 npm run build  # Verify production build locally
