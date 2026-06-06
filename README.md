@@ -131,7 +131,7 @@ CUST-0001,John Smith,john@email.com,12,8500,2025-03-15
 
 
 ```bash
-npm run build  # Verify production build locally
+npm run build 
 ```
 
 ## License
