@@ -46,7 +46,10 @@ export function RevenueBySegmentChart({ data }: RevenueBySegmentChartProps) {
               tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`}
             />
             <Tooltip
-              formatter={(value: number) => [formatCurrency(value), "Revenue"]}
+              formatter={(value) => [
+                formatCurrency(typeof value === "number" ? value : Number(value)),
+                "Revenue",
+              ]}
               contentStyle={{
                 borderRadius: "8px",
                 border: "1px solid hsl(var(--border))",
